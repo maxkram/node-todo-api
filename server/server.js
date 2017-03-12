@@ -13,6 +13,7 @@ app.post("/todos", (req, res) =>{
   var todo = new Todo({
     text: req.body.text
   });
+
   todo.save().then((doc)=>{
     res.send(doc);
   }, (e)=> {
@@ -23,3 +24,5 @@ app.post("/todos", (req, res) =>{
 app.listen(3000, ()=>{
     console.log("Сервер запустился на 3000 порту");
 });
+
+module.exports = {app};
